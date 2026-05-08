@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body style="background: linear-gradient(90deg,rgb(115, 255, 0) 0%, black 10%); color : white;">
+    <form>
+        <center>
+            <h1>Formulaire ics</h1>
+            <!-- textbox pour le nom de l'élève -->
+            <div id="divformule"></div>
+
+            <label for="a" id="lbla">quelle valeure de "a" choisi tu? : </label>
+            <input type="text" id="a">
+
+            <br>
+
+            <label for="b" id="lblb" style="display: none;">quelle valeure de "b" choisi tu? : </label>
+            <input type="text" id="b"style="display: none;">
+
+            <br>
+
+            <label for="c" id="lblc" style="display: none;">quelle valeure de "c" choisi tu? : </label>
+            <input type="text" id="c"style="display: none;">
+
+            <br>
+
+            <label for="r" id="lblr" style="display: none;">quelle valeure de "r" choisi tu? : </label>
+            <input type="text" id="r" style="display: none;">
+
+            <br>
+
+            <label for="s" id="lbls" style="display: none;">quelle valeure de "s" choisi tu? : </label>
+            <input type="text" id="s" style="display: none;">
+
+            <br>
+
+            <label for="h" id="lblh" style="display: none;">quelle valeure de "h" choisi tu? : </label>
+            <input type="text" id="h" style="display: none;">
+
+            <br>
+
+            <label for="k" id="lbllblk" style="display: none;">quelle valeure de "k" choisi tu? : </label>
+            <input type="text" id="k" style="display: none;">
+
+            <br>
+
+            <input type="button" id="btnSoumet" onclick="afficheParabole()" class="shade" value="Soumettre">
+            <!-- Création d'une section pour l'affichage des résultats -->
+            <div id="divAffiche"></div>
+            <input type="reset" id="init" onclick="nouvelleparabole()" value="ReInit" class="shade" style="display: none;">
+        </center>
+    </form>
+    <script>
+        let equation = randomParabole();
+        formuleAleatoire()
+        function formuleAleatoire() {
+            document.getElementById("b").style.display = "none";
+            document.getElementById("c").style.display = "none";
+            document.getElementById("r").style.display = "none";
+            document.getElementById("s").style.display = "none";
+            document.getElementById("h").style.display = "none";
+            document.getElementById("k").style.display = "none";
+            document.getElementById("lblb").style.display = "none"
+            document.getElementById("lblc").style.display = "none"
+            document.getElementById("lblr").style.display = "none"
+            document.getElementById("lbls").style.display = "none"
+            document.getElementById("lblh").style.display = "none"
+            document.getElementById("lblk").style.display = "none"
+            let formule = ""
+            switch(equation){
+                case 1 : 
+                    formule = "y = ax^2 + bx + c"
+                    document.getElementById("b").style.display = "block";
+                    document.getElementById("c").style.display = "block";
+                    document.getElementById("lblb").style.display = "block";
+                    document.getElementById("lblc").style.display = "block";
+                    break
+                case 2 : 
+                    formule = "y = a(x-r)(x-s)"
+                    document.getElementById("r").style.display = "block";
+                    document.getElementById("s").style.display = "block";
+                    document.getElementById("lblr").style.display = "block";
+                    document.getElementById("lbls").style.display = "block";
+                    break
+                case 3 : 
+                    formule = "y = a(x-h)^2 + k"
+                    document.getElementById("h").style.display = "block";
+                    document.getElementById("k").style.display = "block";
+                    document.getElementById("lblh").style.display = "block";
+                    document.getElementById("lblk").style.display = "block";
+                    break
+
+            }
+            document.getElementById("divformule").innerText = "metre votre equation sous la formule "+formule;
+        }
+
+        function c() {
+            let message = 'quelle valeure de "c" choisi tu? : '
+            document.getElementById("divAffiche").innerText = message;
+        }
+
+        function afficheC() {
+            if (equation==1){
+                c()
+            }
+        }
+        function nouvelleparabole(){
+            randomParabole();
+            document.getElementById("a").value = "";
+            document.getElementById("b").value = "";
+            document.getElementById("c").value = "";
+            document.getElementById("r").value = "";
+            document.getElementById("s").value = "";
+            document.getElementById("h").value = "";
+            document.getElementById("k").value = "";
+            document.getElementById("divAffiche").innerText = "";
+        }
+    </script>
+</body>
+</html>

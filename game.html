@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body style="background: linear-gradient(90deg,rgb(115, 255, 0) 0%, black 6%); color : white;">
+    <form>
+        <h1>Formulaire ics</h1>
+        <!-- textbox pour le nom de l'élève -->
+        <h1>entre votre parabole</h1>
+
+        <label for="a">quelle valeure de "a" choisi tu? : </label>
+        <input type="text" id="a">
+
+        <br>
+
+        <label for="b" >quelle valeure de "b" choisi tu? : </label>
+        <input type="text" id="b">
+
+        <br>
+
+        <label for="c" >quelle valeure de "c" choisi tu? : </label>
+        <input type="text" id="c">
+
+        <br>
+
+        <input type="button" id="btnSoumet" onclick="genereParabole()" class="shade" value="Soumettre">
+        <!-- Création d'une section pour l'affichage des résultats -->
+        <div id="divAffiche"></div>
+        <input type="reset" id="init" onclick="nouvelleparabole()" value="Parabole différente" class="shade" >
+        <div id="Ereure"
+    </form>
+    <center>
+        <canvas id="myCanvas" width="1000" height="400" style="border:1px solid rgb(138, 7, 7)"></canvas>
+    </center>
+    <script src="game.js"></script>
+</body>
+</html>
