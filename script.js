@@ -113,7 +113,7 @@ function startLoading(){
   play(loading, goToGame);
 }
 function goToGame(){
-  window.location.href = "game.html";
+  window.location.href = "homepage.html";
 }
 startIntro();
 
